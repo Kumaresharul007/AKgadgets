@@ -1,0 +1,58 @@
+import { Gadget } from "./gadget";
+
+export const GADGETS: Gadget[] = [
+  {
+    name: 'HP',
+    id: '0',
+    image: '/assets/images/hp.jpg',
+    description : 'HP Pavilion x360 11th Gen Intel Core i5-16GB RAM/512GB SSD 14 inch(35.6 cm) FHD, IPS, Convertible Laptop (B&O/Win 11/FPR/Backlit Keyboard/Alexa-Built in/MS Office/Natural Silver/1.52 Kg) -14-dy1010TU',
+    mrp: '₹ 85385/-',
+    dealprice: '₹ 73490/-',
+    comments: [],
+  },
+  {
+    name: 'LENOVO',
+    id: '1',
+    image: '/assets/images/lenovo.jpg',
+    description : 'Lenovo IdeaPad 3 11th Gen Intel Core i5 14" FHD Thin & Light Laptop(16GB/512GB SSD/Windows 11/Office 2021/Backlit/Fingerprint Reader/2Yr Warranty/3months Xbox Game Pass/Arctic Grey/1.41Kg), 82H7016KIN',
+    mrp: '₹ 91890/-',
+    dealprice: '₹ 60990/-',
+    comments: [],
+  },
+  {
+    name: 'MACBOOK',
+    id: '2',
+    image: '/assets/images/apple.jpg',
+    description : '2020 Apple MacBook Air Laptop: Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Space Grey',
+    mrp: '₹ 92900/-',
+    dealprice: '₹ 90990/-',
+    comments: [],
+  },
+  {
+    name: 'DELL',
+    id: '3',
+    image: '/assets/images/dell.jpg',
+    description : 'Dell New 2021 Inspiron 3511 NB || Intel Core i3-11th Gen || 16 GB Ram || 1TB HDD+256GB SSD || Windows 11 Home+Office 2021 || 32 GB Pendrive sandisk|| FHD Display|Black Color || 1 Yr Warranty',
+    mrp: '₹ 55000/-',
+    dealprice: '₹ 48900/-',
+    comments: [],
+  },
+  {
+    name: 'ASUS',
+    id: '4',
+    image: '/assets/images/asus.jpg',
+    description : 'ASUS VivoBook 15 (2021) Intel Core i5-1035G1 10th Gen, 15.6"(39.62cms) FHD Thin and Light Laptop (8GB RAM/512GB + 32GB Optane Memory/Windows 11/Office 2021/Silver/1.8 Kg), X515JA-EJ562WS',
+    mrp: '₹ 62990/-',
+    dealprice: '₹ 50990/-',
+    comments: [],
+  },
+  {
+    name: 'MI',
+    id: '5',
+    image: '/assets/images/mi.jpg',
+    description : 'Mi Notebook Ultra 3.2K resolution display Intel Core i5-11300H 11th Gen 15.6-inch(39.62 cm) Thin and Light laptop (16GB/512GB SSD/Iris Xe Graphics/Win 10/MS Office/Backlit KB/Fingerprint sensor/1.7Kg)',
+    mrp: '₹ 76999/-',
+    dealprice: '₹ 64990/-',
+    comments: [],
+  },
+]

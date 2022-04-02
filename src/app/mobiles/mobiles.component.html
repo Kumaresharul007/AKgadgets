@@ -1,0 +1,17 @@
+<div>
+    <h1 align="center">Mobiles</h1>
+    <hr>
+</div>
+<div fxLayout="row wrap" *ngIf="mobiles">
+      <mat-card fxFlex="46%" fxFlex.xs="100%" *ngFor="let mobile of mobiles" style="margin: 26px; box-shadow: 2px 2px 12px #888888;">
+        <mat-card-header>
+          <mat-card-title>{{ mobile.name | uppercase}}</mat-card-title>
+        </mat-card-header>
+        <hr>
+        <img height="400px" src="{{BaseURL + mobile.image }}" alt="{{ mobile.name }}">
+        <mat-card-content><h3>{{ mobile.dealprice }}</h3></mat-card-content>
+        <mat-card-actions>
+          <a mat-button class="button" [routerLink]="['/mobiledetails', mobile.id]">VIEW DETAILS</a>
+        </mat-card-actions>
+      </mat-card>
+</div>

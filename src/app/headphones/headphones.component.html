@@ -1,0 +1,18 @@
+<div>
+    <h1 align="center">Headphones</h1>
+    <hr>
+</div>
+<div fxLayout="row wrap" *ngIf="headphones">
+      <mat-card fxFlex="46%" fxFlex.xs="100%" *ngFor="let headphone of headphones" style="margin: 26px; box-shadow: 2px 2px 12px #888888;">
+        <mat-card-header>
+          <mat-card-title>{{ headphone.name | uppercase}}</mat-card-title>
+        </mat-card-header>
+        <hr>
+        <img height="400px" src="{{BaseURL + headphone.image }}" alt="{{ headphone.name }}">
+        <mat-card-content><h3>{{ headphone.dealprice }}</h3></mat-card-content>
+        <mat-card-actions>
+          <a mat-button class="button" [routerLink]="['/headphonedetails', headphone.id]">VIEW DETAILS</a>
+        </mat-card-actions>
+      </mat-card>
+</div>
+

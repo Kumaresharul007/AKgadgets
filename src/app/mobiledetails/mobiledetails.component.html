@@ -1,0 +1,48 @@
+<div style="margin: 15px;">
+    <mat-card fxLayoutGap="18%" fxLayout="row wrap">
+        <img height="500px" src="{{ BaseURL + mobile.image }}" alt="{{ mobile.name }}"><br><br>
+        <div fxFlex>
+            <mat-card-content>
+                <h2>PRODUCT DETAILS:</h2>
+                <h3 style="text-decoration: line-through;"><span style="color: darkblue;">MRP: </span>{{ mobile.mrp }}</h3>
+                <h3><span style="color: darkblue;">DEAL PRICE:  </span>{{ mobile.dealprice }}</h3>
+                <h3><span style="color: darkblue;">DESCRIPTION:  </span><h4>{{ mobile.description }}</h4></h3>
+            </mat-card-content><br><br><br><br>
+            <mat-card-actions>
+                <button mat-raised-button (click)="goback()" class="button">BACK</button>
+                <button mat-raised-button class="button">BUY NOW</button>
+                <button mat-raised-button class="button" (click)="addtocart()">ADD TO CART</button>
+            </mat-card-actions>
+        </div>
+    </mat-card>
+</div>
+<h3>POST YOUR PRODUCT REVIEW:</h3>
+<div>
+    <form novalidate [formGroup]="commentform" (ngSubmit)="onSubmit()">
+        <mat-form-field style="width: 100%;">
+            <input matInput type="text" placeholder="Name" formControlName="author" required>
+            <mat-error *ngIf="commenterrors.author">{{ commenterrors.author }}</mat-error>
+        </mat-form-field><br>
+        RATING: <mat-slider style="width: 30%;" min="1" max="5" step="1" value="5" thumbLabel tickInterval="1" formControlName="rating"></mat-slider><br>
+        <mat-form-field style="width: 100%;">
+            <textarea matInput rows="10" placeholder="Comment" formControlName="comment" required></textarea>
+            <mat-error *ngIf="commenterrors.comment">{{ commenterrors.comment }}</mat-error>
+        </mat-form-field>
+        <button mat-raised-button [disabled]="commentform.invalid">SUBMIT</button>
+    </form>
+</div><br>
+<h3 align="center">CUSTOMER REVIEWS:</h3>
+
+<div *ngIf="mobile">
+    <mat-card style="margin: 26px;">
+        <mat-list>
+            <mat-list-item *ngFor="let comment of mobile.comments">
+              <h3 matLine>{{ comment.comment }}</h3>
+              <p matLine>{{ comment.rating }} Stars</p>
+              <p matLine>
+                <span>-- {{ comment.author }} {{ comment.date | date }}</span>
+              </p>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+</div>

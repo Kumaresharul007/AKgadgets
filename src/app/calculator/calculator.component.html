@@ -1,0 +1,18 @@
+<div>
+    <h1 align="center">Calculators</h1>
+    <hr>
+</div>
+<div fxLayout="row wrap" *ngIf="calculators">
+      <mat-card fxFlex="46%" fxFlex.xs="100%" *ngFor="let calculator of calculators" style="margin: 26px; box-shadow: 2px 2px 12px #888888;">
+        <mat-card-header>
+          <mat-card-title>{{ calculator.name | uppercase}}</mat-card-title>
+        </mat-card-header>
+        <hr>
+        <img height="400px" src="{{BaseURL + calculator.image }}" alt="{{ calculator.name }}">
+        <mat-card-content><h3>{{ calculator.dealprice }}</h3></mat-card-content>
+        <mat-card-actions>
+          <a mat-button class="button" [routerLink]="['/calculatordetails', calculator.id]">VIEW DETAILS</a>
+        </mat-card-actions>
+      </mat-card>
+</div>
+

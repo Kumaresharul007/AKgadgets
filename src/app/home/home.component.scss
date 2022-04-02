@@ -1,0 +1,9 @@
+@media only screen and (min-width: 600px){
+    .home{
+        width: 46%;;
+    }
+}
+mat-card:hover{
+    box-shadow: 2px 2px 12px #888888;
+    transform: perspective(400px) translateZ(26px);
+}

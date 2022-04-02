@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+.toolbar{
+    background-color: #673AB7;
+    color: white;
+    border-radius: 5px;
+}
+
+.button{
+    background-color: darkorange;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #673AB7;
+    transition: 0.3s;
+}
+.button:active{
+    border: 2px solid black;
+}.flex-spacer{
+    margin-left: auto;
+}
+.active{
+    background-color: darkblue
+}

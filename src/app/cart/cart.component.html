@@ -1,0 +1,29 @@
+<div *ngIf="temp2">
+    <div align="center"><button mat-raised-button (click)="removefromcart()">DELETE CART HISTORY</button> </div>
+    <div>
+        <table style="width: 100%;">
+            <tr>
+                <th><h2>PRODUCT IMAGE:</h2></th>
+                <th><h2>BRAND:</h2></th>
+                <th><h2>DEALPRICE:</h2></th>
+                <th><h2>QUANTITY:</h2></th>
+            </tr>
+            <tr *ngFor="let item of items">
+                <td align="center"><img height="300px" src="{{ BaseURL + item.image }}" alt="image"></td>
+                <td align="center"><h3>{{ item.name }}</h3></td>
+                <td align="center"><h3>{{ item.dealprice }}</h3></td>
+                <td align="center">
+                    <input type="number" placeholder="Qty">
+                    <button class="button">BUY NOW</button>
+                </td>
+            </tr><br><br><br>
+        </table>
+    </div>
+</div>
+<div *ngIf="temp">
+    <div align="center">
+        <img height="500px" src="assets/images/empty cart.png" alt="image"><br><br>
+        <h2>YOUR CART IS EMPTY :(</h2>
+        <button mat-raised-button routerLink="/home" style="color: darkblue;">Start shopping now!</button>
+    </div>
+</div>

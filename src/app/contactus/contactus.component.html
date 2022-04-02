@@ -1,0 +1,55 @@
+<div fxLayout = "row wrap" fxLayoutGap = "100px" style="margin: 15px;">
+    <div>
+        <img height="500px" src="assets/images/contactpic.jpg" alt="contactus">
+    </div>
+    <div fxFlex>
+        <h1 align="center">Contact Us</h1>
+        <hr>
+        <h3>Get in touch with us to share a feedback of our service or any queries that you have regarding our service on this platform. Feel free to interact with us by filling a form below. thank you :)</h3>
+        <h2 style="text-decoration: underline;">Our Address:</h2>
+        <address style="line-height: 40px;">
+            MKN Nagar,<br>
+            Venkatesapuram<br>
+            Arakkonam, TAMIL NADU<br>
+            India.
+        </address>
+        <h2 style="text-decoration: underline;">Reach us through:</h2>
+        <div>
+            <a mat-raised-button href="tel:+918903507021"><i class="fa fa-phone"></i> Call</a>
+            <a mat-raised-button href="https://twitter.com/Kumaresharul007" target="blank"><i class="fa fa-twitter"></i> Twitter</a>
+            <a mat-raised-button href="mailto:" target="blank"><i class="fa fa-envelope-o"></i> Email</a>
+          </div>
+    </div>
+</div>
+<div style="margin: 15px;">
+    <h2>SUBMIT US YOUR FEEDBACK:</h2>
+    <form align="center" novalidate [formGroup]="feedbackform" (ngSubmit)="onsubmit()">
+        <mat-form-field style="width: 100%;">
+            <input matInput type="text" placeholder="FirstName" formControlName="firstname" required>
+            <mat-error *ngIf="feedbackerrors.firstname">{{ feedbackerrors.firstname }}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field style="width: 100%;">
+            <input matInput type="text" placeholder="LastName" formControlName="lastname" required>
+            <mat-error *ngIf="feedbackerrors.lastname">{{ feedbackerrors.lastname }}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field style="width: 100%;">
+            <input matInput type="email" placeholder="Email" formControlName="email" email required>
+            <mat-error *ngIf="feedbackerrors.email">{{ feedbackerrors.email }}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field style="width: 100%;">
+            <input matInput type="number" placeholder="TelNum" formControlName="telnum" pattern="[0-9]*" required>
+            <mat-error *ngIf="feedbackerrors.telnum">{{ feedbackerrors.telnum }}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field style="width: 100%;">
+            <textarea matInput rows="10" placeholder="Your Feedback" formControlName="feedback" required></textarea>
+            <mat-error *ngIf="feedbackerrors.feedback">{{ feedbackerrors.feedback }}</mat-error>
+        </mat-form-field>
+        <mat-slide-toggle formControlName="toggle">Can we contact you?</mat-slide-toggle>
+        <mat-select formControlName="type" style="width: 30%;" placeholder="How?">
+            <mat-option value="None">None</mat-option>
+            <mat-option value="Email">Email</mat-option>
+            <mat-option value="TelNum">TelNum</mat-option>
+        </mat-select><br><br>
+        <button mat-raised-button [disabled]="feedbackform.invalid" (click)="openalert()">SUBMIT</button>
+    </form>
+</div>
